@@ -10,7 +10,7 @@ export default function App() {
         <Route path="/" element={
           <Productlist />
         } />
-        <Route path="product/:productid" element={<SingleProduct /> } />
+        <Route path="product/:productid" element={<SingleProduct />} />
 
       </Routes>
     </>
