@@ -3,9 +3,19 @@ import "./SingleProduct.css";
 import img1 from '../../assets/img/1.jpg';
 import { FaLongArrowAltLeft } from "react-icons/fa";
 import { FaShoppingBag } from "react-icons/fa";
-
+import { useEffect , useState } from 'react';
+import { useParams } from "react-router-dom";
 
 export default function SingleProduct() {
+    const { productid } = useParams();
+    const api_link = "https://fakestoreapi.com/products"
+    const [product, setproduct] = useState({});
+    useEffect(()=>{
+        fetch(`${api_link}/${productid}`)
+        .then((res) => res.json())
+        .then((date) => setproduct(date))
+    },[productid]);
+
     return (
         <div>
             <div className="container mt-5 mb-5">
@@ -30,9 +40,9 @@ export default function SingleProduct() {
                                     </div>
                                     <div className="mt-4 mb-3"> 
                                         <span className="text-uppercase text-muted brand">Orianz</span>
-                                        <h5 className="text-uppercase">Men's slim fit t-shirt</h5>
+                                        <h5 className="text-uppercase">{product.title}</h5>
                                         <div className="price d-flex flex-row align-items-center"> 
-                                            <span className="act-price">$20</span>
+                                            <span className="act-price">{product.price}$</span>
                                         </div>
                                     </div>
                                     <p className="about">Shop from a wide range of t-shirt from orianz. Pefect for your everyday use, you could pair it with a stylish pair of jeans or trousers complete the look.</p>
