@@ -1,10 +1,14 @@
-import React from "react";
-import "./style.css";
+ import './App.css';
+import Navbar from './navbar/Navbar'
+import Homepage from './HomePage/Homepage'
 
-export default function App() {
+function App() {
   return (
-    <div>
-      <h1>React Ecommerce!</h1>
+    <div className="App">
+    <Navbar/>
+    <Homepage/>
     </div>
   );
 }
+
+export default App;
