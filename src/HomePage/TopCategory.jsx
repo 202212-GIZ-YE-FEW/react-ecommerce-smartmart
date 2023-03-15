@@ -6,8 +6,8 @@ import Card from 'react-bootstrap/Card';
 import CardGroup from 'react-bootstrap/CardGroup';
 import Button from 'react-bootstrap/Button';
 // 
-const TopCategory= ({cat ,title,filtter }) => {
-    const [products] =useFetch(`https://fakestoreapi.com/products/category/${cat}`,filtter);
+const TopCategory= ({cat ,title,filttere }) => {
+    const [products] =useFetch(`https://fakestoreapi.com/products/category/${cat}`,filttere);
         //👇️ sort by Numeric property ASCENDING (1 - 100)
         const numAscending  = [...products].sort((a, b) => a.price - b.price);
         // 👇️ sort by Numeric property DESCENDING (100 - 1)
@@ -16,15 +16,16 @@ const TopCategory= ({cat ,title,filtter }) => {
         const strAscending = [...products].sort((a, b) =>a.title > b.title ? 1 : -1,);
          // 👇️ sort by String property DESCENDING (Z - A)
         const strDescending = [...products].sort((a, b) =>a.title > b.title ? -1 : 1,);
-    
-   
+    const arr=[numAscending,numDescending,strAscending,strDescending,products];
+    console.log(filttere)
+      
  return ( <>
-
    <h1>{title}</h1>
-   <h2>{filtter}</h2>
    <CardGroup>
-   { products.map((product )=>( 
+ 
+   {arr[filttere].map((product )=>( 
       <div className="dd" key={product.id}>
+        
 <Card>
         <Card.Img variant="top" src={product.image} />
         <Card.Body>

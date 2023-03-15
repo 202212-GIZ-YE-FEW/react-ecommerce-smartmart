@@ -3,7 +3,7 @@ import TopCategories from './../HomePage/TopCategories';
 import TopCategory from   './../HomePage/TopCategory';
 const Navbar = () => {
        const [category,setCategory]=useState('all')
-       const [filtter,setFiltter]=useState('products')
+       const [filtter,setFiltter]=useState(0)
 
     return ( 
         <>
@@ -27,11 +27,11 @@ const Navbar = () => {
                 </li>
                 <li className="upper-links dropdown"><a className="links" href="#">Filter</a>
                     <ul className="dropdown-menu">
-                        <li className="profile-li"><a onClick={()=>setFiltter('numDescending')} className="profile-links" href="#">Price High to Low</a></li>
-                        <li className="profile-li"><a onClick={()=>setFiltter('numAscending')} className="profile-links" href="#">Price low to High</a></li>
-                        <li className="profile-li"><a onClick={()=>setFiltter('strAscending')} className="profile-links" href="#">Name A to Z</a></li>
-                        <li className="profile-li"><a onClick={()=>setFiltter('strDescending')} className="profile-links" href="#">Name Z to A</a></li>
-                        <li className="profile-li"><a onClick={()=>setFiltter('products')} className="profile-links" href="#">No Filter</a></li>
+                        <li className="profile-li"><a onClick={()=>setFiltter(1)} className="profile-links" href="#">Price High to Low</a></li>
+                        <li className="profile-li"><a onClick={()=>setFiltter(2)} className="profile-links" href="#">Price low to High</a></li>
+                        <li className="profile-li"><a onClick={()=>setFiltter(3)} className="profile-links" href="#">Name A to Z</a></li>
+                        <li className="profile-li"><a onClick={()=>setFiltter(4)} className="profile-links" href="#">Name Z to A</a></li>
+                        <li className="profile-li"><a onClick={()=>setFiltter(0)} className="profile-links" href="#">No Filter</a></li>
                     </ul>
                 </li>
             </ul>
@@ -73,8 +73,8 @@ const Navbar = () => {
     <a href="#">Link</a>
 </div>
  
-       <TopCategories category={category} /> 
-       <TopCategory filtter={filtter}/>
+       <TopCategories category={category} filtter={filtter} /> 
+       {/* <TopCategory filtter={filtter}/> */}
 
        </>
      );
