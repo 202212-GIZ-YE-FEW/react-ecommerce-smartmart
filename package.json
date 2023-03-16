@@ -11,12 +11,8 @@
     "react-bootstrap": "^2.7.2",
     "react-dom": "^18.1.0",
     "react-icons": "^4.8.0",
-<<<<<<< HEAD
-    "react-router-dom": "^6.9.0"
-=======
     "react-router-dom": "^6.9.0",
     "react-touch-carousel": "^0.10.2"
->>>>>>> SP
   },
   "scripts": {
     "start": "react-scripts start",

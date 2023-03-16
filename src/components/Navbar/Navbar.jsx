@@ -1,5 +1,6 @@
 import {useEffect,useState} from 'react';
 import TopCategories from './../HomePage/TopCategories';
+import { Link } from "react-router-dom";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 // import 'bootstrap/dist/js/bootstrap.min.js';
  
@@ -9,6 +10,11 @@ const Navbar = () => {
        const[searchTerm,setSearchTerm]=useState("");
     return ( 
         <>
+          <h1>
+      <Link to={`/products`} className="text-reset">
+        all products
+      </Link>
+    </h1>
  
  <div id="flipkart-navbar">
     <div className="container">
