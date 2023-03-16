@@ -5,7 +5,6 @@ import { FaShoppingBag } from "react-icons/fa";
 import { useEffect , useState } from 'react';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import Productlist from "../Productlist";
 
 export default function SingleProduct() {
     const params  = useParams();
