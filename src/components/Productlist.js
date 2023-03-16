@@ -45,7 +45,7 @@ function Productlist() {
                                                 </div>
                                             </div>
                                             <div className="card-body">
-                                                <Link to={`/product/${product.id}`} className="text-reset">
+                                                <Link to={`/product/${items.id}`} className="text-reset">
                                                     <h5 className="card-title mb-3">{items.title}</h5>
                                                 </Link>
 
